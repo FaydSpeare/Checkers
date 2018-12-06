@@ -101,6 +101,12 @@ public class BoardUI extends VBox {
                         }
 
                     }
+
+                    try {
+                        Thread.sleep(10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 
