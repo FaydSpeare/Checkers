@@ -12,11 +12,11 @@ public class Tree {
 
         double time = System.currentTimeMillis();
         double duration = 0;
-        int it = 0;
+        //int it = 0;
 
         while(duration <= timeAllowed){
             duration = (System.currentTimeMillis() - time)/1000;
-            it++;
+            //it++;
 
             Node node = root;
 
@@ -24,10 +24,10 @@ public class Tree {
                 return null;
             }
 
-            int depth = 0;
+            //int depth = 0;
             while(!node.isExpandable()){
                 node = node.selectChild();
-                depth++;
+                //depth++;
 
                 if(node.isTerminal()){
                     break;
