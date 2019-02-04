@@ -325,6 +325,7 @@ public class BoardUI extends VBox {
         needsUpdating = true;
         whiteEval = 0;
         blackEval = 0;
+        historyIndex = 0;
         redraw(board);
     }
 
