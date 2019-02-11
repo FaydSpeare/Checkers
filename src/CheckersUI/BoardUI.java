@@ -82,7 +82,7 @@ public class BoardUI extends VBox {
                         double time;
                         if (board.toMove && whiteAI) {
                             time = whiteAITime;
-                            SearchData result = Tree.runUCT(board, time, board.toMove, true);
+                            SearchData result = Tree.runUCT(board, time, board.toMove, false);
                             board.makeMove(result.move);
                             history.add(board.replicate());
                             historyIndex++;
@@ -101,9 +101,7 @@ public class BoardUI extends VBox {
                             needsUpdating = true;
                             redraw(board);
                         }
-
                     }
-
                     try {
                         Thread.sleep(50);
                     } catch (InterruptedException e) {

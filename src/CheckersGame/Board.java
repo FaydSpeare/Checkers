@@ -87,7 +87,6 @@ public class Board {
                return 1;
           }
 
-
           if(toMove && MoveGen.getWhiteMoves(this).size() == 0){
                return -1;
           }
@@ -112,13 +111,13 @@ public class Board {
      }
 
      public int simulateGame(boolean eval){
-          if(eval || !eval){
+          if(!eval){
                int i = 0;
                int depth = 0;
+
                while(!isGameOver()){
 
                     playRandomMove();
-
 
                     if((white ^ whiteKings) == 0 && (black ^ blackKings) == 0){
                          i++;
@@ -130,26 +129,9 @@ public class Board {
                          return 0;
                     }
                }
-               //System.out.println(depth);
                return getWinner();
-
           }
-          int topMask = 0b1111_0011_1100_0011_0000_1100_0011_1100;
-          int bottomMask = 0b0000_1100_0011_1100_1111_0011_1100_0011;
-
-          int numBlack = 0;
-          int numWhite = 0;
-
-          numBlack += 5*Integer.bitCount(black);
-          numWhite += 5*Integer.bitCount(white);
-
-          numBlack += 2*Integer.bitCount(blackKings);
-          numWhite += 2*Integer.bitCount(whiteKings);
-
-          //numBlack += Integer.bitCount(bottomMask&black);
-          //numWhite += Integer.bitCount(topMask&white);
-
-          return (numWhite - numBlack);
+          return evaluation();
      }
 
      private void print(int b){
@@ -216,6 +198,25 @@ public class Board {
 
      public Board replicate(){
           return new Board(toMove, white, black, whiteKings, blackKings);
+     }
+
+     private int evaluation(){
+         int topMask = 0b1111_0011_1100_0011_0000_1100_0011_1100;
+         int bottomMask = 0b0000_1100_0011_1100_1111_0011_1100_0011;
+
+         int numBlack = 0;
+         int numWhite = 0;
+
+         numBlack += 5*Integer.bitCount(black);
+         numWhite += 5*Integer.bitCount(white);
+
+         numBlack += 2*Integer.bitCount(blackKings);
+         numWhite += 2*Integer.bitCount(whiteKings);
+
+         //numBlack += Integer.bitCount(bottomMask&black);
+         //numWhite += Integer.bitCount(topMask&white);
+
+         return (numWhite - numBlack);
      }
 
 }

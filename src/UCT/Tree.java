@@ -54,9 +54,6 @@ public class Tree {
 
             expanded.update(result);
         }
-
-
-
         //System.out.println("It: "+it);
 
         int bestMove = 0;
