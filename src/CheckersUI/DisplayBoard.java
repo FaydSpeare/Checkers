@@ -1,5 +1,7 @@
-package CheckersGame;
+package CheckersUI;
 
+import CheckersGame.Board;
+import CheckersGame.MoveGen;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

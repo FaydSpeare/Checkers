@@ -1,4 +1,4 @@
-package CheckersGame;
+package CheckersUI;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

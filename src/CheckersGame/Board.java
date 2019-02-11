@@ -98,7 +98,7 @@ public class Board {
           return 0;
      }
 
-     public void playRandomMove(){
+     private void playRandomMove(){
 
           if(toMove){
                List<Integer> moves = MoveGen.getWhiteMoves(this);
@@ -152,7 +152,7 @@ public class Board {
           return (numWhite - numBlack);
      }
 
-     public void print(int b){
+     private void print(int b){
           String s = Integer.toUnsignedString(b, 2);
           while(s.length() < 32){
                s = "0" + s;

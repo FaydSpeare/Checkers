@@ -4,21 +4,11 @@ import java.util.*;
 
 public class MoveGen {
 
-    // 0b0000_0000_0000_0000_0000_0000_0000_0000;
-    // WHITE START 0b0000_0100_0001_1100_0111_0001_1100_0011;
-    // BLACK START 0b1110_0011_1000_0010_0000_1100_0011_1000;
-
-    public static final int whiteB = 0b1000_0010_0000_0000_0000_1000_0010_0000;
-    public static final int blackW = 0b0000_0000_0000_0100_0001_0000_0100_0001;
-
     private static final int lMaskdown = 0b1111_1011_1111_1011_1110_1011_1011_1010;
     private static final int rMaskup = 0b0111_1101_1111_1101_1111_0101_1101_1101;
 
     private static final int lMaskup = 0b0111_1001_1111_1011_1111_0011_1101_1011;
     private static final int rMaskdown = 0b1111_1101_1111_1001_1110_1101_1011_1100;
-
-    private static final int lMask2 = 0b1111_0011_1111_0011_1111_0011_1111_0011;
-    private static final int rMask2 = 0b1111_1100_1111_1100_1111_1100_1111_1100;
 
     private static final int lMask2white = 0b0011_0000_1111_0011_1111_0011_1100_0011;
     private static final int rMask2white = 0b0011_1100_1111_1100_1111_0000_1100_1100;
@@ -1104,53 +1094,9 @@ public class MoveGen {
         int black = 0b1110_0011_1000_0010_0000_1100_0011_1000;
         int whiteKings = 0b0000_0000_0000_0000_0000_0000_0000_0000;
         int blackKings = 0b0000_0000_0000_0000_0000_0000_0000_0000;
-
-        /*
-        white = 0b0010_0000_0000_0000_0000_0000_0000_0000;
-        black = 0b0000_0000_0000_0000_0000_0000_0000_0001;
-
-        whiteKings = 0b0010_0000_0000_0000_0000_0000_0000_0000;
-        blackKings = 0b0000_0000_0000_0000_0000_0000_0000_0001;
-        */
-
         return new Board(true, white, black, whiteKings, blackKings);
     }
 
-
-    public static void main(String[] args){
-
-        int white = 0b0000_0100_0001_1100_0111_0001_1100_0011;
-        int black = 0b1110_0011_1000_0010_0000_1100_0011_1000;
-
-
-        white = 0b0000_0000_0000_0000_0000_0000_0000_0001;
-        black = 0b0000_0000_0000_0000_0000_0000_0100_0000;
-
-        int whiteKings = 0b0000_0000_0000_0000_0000_0000_0000_0001;
-        int blackKings = 0b0000_0000_0000_0000_0000_0000_0100_0000;
-
-        Board board = new Board(true, white, black, whiteKings, blackKings);
-
-        /*
-        System.out.println("b");
-        for(int i: getBlackMoves(board)){
-            System.out.println(Integer.toUnsignedString(i, 2));
-            Board b2 = board.replicate();
-            b2.print(i);
-            b2.makeMove(i);
-            //b2.print(b2.black);
-            //b2.print(b2.white);
-            System.out.println("white");
-
-        }
-        System.out.println("white");
-        */
-        for(int i = 0; i < 100; i++){
-            Board b = board.replicate();
-            //System.out.println(b.simulateGame());
-        }
-        //board.print(getSingleWhiteMove(board, 0b1));
-    }
 
 
 }

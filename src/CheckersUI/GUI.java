@@ -1,5 +1,6 @@
-package CheckersGame;
+package CheckersUI;
 
+import CheckersGame.MoveGen;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
@@ -16,7 +17,6 @@ public class GUI extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        //primaryStage.setResizable(false);
 
         BorderPane root = new BorderPane();
 

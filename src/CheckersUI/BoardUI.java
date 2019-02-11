@@ -1,5 +1,7 @@
-package CheckersGame;
+package CheckersUI;
 
+import CheckersGame.Board;
+import CheckersGame.MoveGen;
 import UCT.SearchData;
 import UCT.Tree;
 import javafx.event.ActionEvent;
